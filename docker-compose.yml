@@ -58,7 +58,7 @@ services:
 
   pgadmin:
     container_name: pgadmin-4
-    image: dpage/pgadmin4:9
+    image: dpage/pgadmin4:9.5
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
@@ -83,4 +83,3 @@ volumes:
 networks:
   postgres:
     driver: bridge
-    
