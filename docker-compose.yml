@@ -26,7 +26,7 @@ services:
       - "-c"
       - "lock_timeout=1s"
       - "-c"
-      - "statement_timeout=60s"
+      - "statement_timeout=10min"
       - "-c"
       - "shared_preload_libraries=pg_stat_statements"
       - "-c"
@@ -58,7 +58,9 @@ services:
 
   pgadmin:
     container_name: pgadmin-4
-    image: dpage/pgadmin4:9.5
+    build:
+      context: .
+      dockerfile: Dockerfile.pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}

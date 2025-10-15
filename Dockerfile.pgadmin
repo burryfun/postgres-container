@@ -1,0 +1,4 @@
+FROM dpage/pgadmin4:9.5
+USER root
+RUN apk update && apk add --no-cache zstd-libs
+USER pgadmin
